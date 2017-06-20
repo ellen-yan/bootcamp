@@ -1,6 +1,7 @@
 # %load dnatorna.py
 """
-Convert DNA sequences to RNA.
+Convert DNA sequences to RNA and returns the sequence
+in the same case as given.
 """
 
 def rna(seq):

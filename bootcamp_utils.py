@@ -1,3 +1,6 @@
+# Useful code snippets and functions from the bootcamp
+
+# Plotting: seaborn settings
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -10,19 +13,9 @@ colors = ['#1f77b4', '#ff7f0e', '#2ca02c', '#d62728',
 
 sns.set(style='whitegrid', palette=colors, rc={'axes.labelsize': 16}) # overrides matplotlib settings for plots
 
-# Load the data
-data = np.loadtxt('data/retina_spikes.csv', skiprows=2, delimiter=',')
-
-# Slice out the time and voltage
-t = data[:, 0]
-v = data[:, 1]
-
-# Build the figure
-fig, ax = plt.subplots(1, 1, figsize=(10, 3)) # figsize sets window size in inches
-_ = ax.set_xlabel('t (ms)')
-_ = ax.set_ylabel('V (µV)')
-
-# Paint the plot
-_ = ax.plot(t, v)
-
-plt.show()
+# Empirical cumulative distribution function, to replace histograms without
+# losing information (1D data)
+def ecdf(data):
+    x = sorted(data)
+    y = np.arange(0, 1, 1/len(x))
+    return x, y

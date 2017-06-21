@@ -28,3 +28,5 @@ speed_test.py
 plotting_fun.py
 plot_sin.py
 plot_spikes.py
+plotting_exercises.py
+bootcamp_utils.py (for general reference)
